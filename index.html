@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eye Controlled Mouse</title>
+
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: Arial;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    #video {
+      border: 4px solid #00ff88;
+      margin-top: 20px;
+      width: 640px;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Eye Controlled Mouse (Live)</h2>
+
+  <img id="video"
+       src="{{ url_for('video_feed') }}"
+       alt="Video feed" />
+
+  <form method="POST" action="/shutdown">
+    <button type="submit">Stop Server</button>
+  </form>
+
+</body>
+</html>
